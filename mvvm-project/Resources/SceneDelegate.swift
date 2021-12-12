@@ -19,9 +19,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
         let window = UIWindow(windowScene: windowScene)
-          window.rootViewController = MoviesListViewController()// Your initial view controller.
-          window.makeKeyAndVisible()
-          self.window = window
+        
+        let moviesAPIManager = MoviesAPIManager()
+        let viewModel = MoviesListViewModel(moviesAPIManager: moviesAPIManager)
+        let viewController = MoviesListViewController(viewModel: viewModel)
+        
+        window.rootViewController = viewController
+        window.makeKeyAndVisible()
+        self.window = window
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
