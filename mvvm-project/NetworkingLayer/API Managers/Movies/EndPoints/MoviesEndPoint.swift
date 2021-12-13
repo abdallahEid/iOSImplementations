@@ -10,13 +10,8 @@ import Foundation
 struct MoviesPopularEndPoint: EndPointType {
     
     // MARK: - Properties
-    private var apiKey: String {
-        return "34598197fdde2c0e7acc2c41bc1a18ab"
-    }
-    
     var baseUrl: URL {
-        guard let url = URL(string: "https://api.themoviedb.org/3/") else { fatalError("baseURL could not be configured.")}
-        return url
+        return Environment.baseUrl
     }
     
     var path: String {
@@ -30,7 +25,7 @@ struct MoviesPopularEndPoint: EndPointType {
     var task: HTTPTask {
         return .requestParameters(bodyParameters: nil,
                                   bodyEncoding: .urlEncoding,
-                                  urlParameters: ["api_key":apiKey
+                                  urlParameters: ["api_key":Environment.apiKey
                                                  ])
     }
     

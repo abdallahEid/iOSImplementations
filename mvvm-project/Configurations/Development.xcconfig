@@ -1,0 +1,21 @@
+//
+//  Development.xcconfig
+//  mvvm-project
+//
+//  Created by Abdallah Eid on 13/12/2021.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+#include "Pods/Target Support Files/Pods-mvvm-project/Pods-mvvm-project.release (development).xcconfig"
+
+// Server URL
+BASE_URL = https:/$()/qa.themoviedb.org/3/
+
+// Keys
+API_KEY = 34598197fdde2c0e7acc2c41bc1a18ab
+
+// App Settings
+APP_NAME = Movies (dev)
+APP_BUNDLE_ID = abdallah.mvvm-project.dev

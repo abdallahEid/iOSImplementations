@@ -1,0 +1,23 @@
+//
+//  Staging.xcconfig
+//  mvvm-project
+//
+//  Created by Abdallah Eid on 13/12/2021.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+#include "Pods/Target Support Files/Pods-mvvm-project/Pods-mvvm-project.release (staging).xcconfig"
+
+// Server URL
+BASE_URL = https:/$()/staging.themoviedb.org/3/
+
+//case .production: return "https://api.themoviedb.org/3/movie/"
+
+// Keys
+API_KEY = 34598197fdde2c0e7acc2c41bc1a18ab
+
+// App Settings
+APP_NAME = Movies (staging)
+APP_BUNDLE_ID = abdallah.mvvm-project.staging

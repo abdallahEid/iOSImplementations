@@ -32,7 +32,7 @@ class Router {
             task = URLSession.shared.dataTask(with: request, completionHandler: { data, response, error in
                 
                 if error != nil {
-                    completion(.failure(.noInternet))
+                    completion(.failure(.failed))
                 }
                 
                 if let response = response as? HTTPURLResponse {
