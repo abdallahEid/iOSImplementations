@@ -7,6 +7,7 @@ target 'mvvm-project' do
 
   # Pods for mvvm-project
   pod 'netfox'
+  pod 'ObjectMapper'
 
   target 'mvvm-projectTests' do
     inherit! :search_paths

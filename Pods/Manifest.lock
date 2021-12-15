@@ -1,16 +1,20 @@
 PODS:
   - netfox (1.19.0)
+  - ObjectMapper (4.2.0)
 
 DEPENDENCIES:
   - netfox
+  - ObjectMapper
 
 SPEC REPOS:
   trunk:
     - netfox
+    - ObjectMapper
 
 SPEC CHECKSUMS:
   netfox: efeec1d23406df6cd605212f09a40957bb5654eb
+  ObjectMapper: 1eb41f610210777375fa806bf161dc39fb832b81
 
-PODFILE CHECKSUM: fc13562e0e2d9640501635bb9ef68f623bf43ed7
+PODFILE CHECKSUM: 8b52badce11626b0b32fc26045f6f5a575e0a2b4
 
 COCOAPODS: 1.10.1

@@ -16,10 +16,8 @@ struct MoviesListViewModel {
     }
     
     func getPopularMovies() {
-        moviesAPIManager.getPopularMovies(page: 1) { response, error in
-            if error == .noInternet {
-                print ("jsdhfjahskdjask")
-            }
+        moviesAPIManager.getPopularMovies(page: 1) { result, error in
+            print("MOVIES:", result?.movies.first?.title ?? "Movies Title Not Found")
         }
     }
     
