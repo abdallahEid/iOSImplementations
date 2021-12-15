@@ -227,11 +227,13 @@
 		95A253E3276506400049D1FB /* mvvm-project */ = {
 			isa = PBXGroup;
 			children = (
+				95A25417276506790049D1FB /* Resources */,
 				95A25422276509F30049D1FB /* Models */,
-				95A2541B276509690049D1FB /* Storyboards */,
 				95A254142765064F0049D1FB /* NetworkingLayer */,
 				95A25418276506900049D1FB /* PresentationLayer */,
-				95A25417276506790049D1FB /* Resources */,
+				95A253E4276506400049D1FB /* AppDelegate.swift */,
+				95A253E6276506400049D1FB /* SceneDelegate.swift */,
+				95A253EF276506420049D1FB /* LaunchScreen.storyboard */,
 			);
 			path = "mvvm-project";
 			sourceTree = "<group>";
@@ -290,8 +292,6 @@
 			children = (
 				95A253F2276506420049D1FB /* Info.plist */,
 				95A253ED276506420049D1FB /* Assets.xcassets */,
-				95A253E4276506400049D1FB /* AppDelegate.swift */,
-				95A253E6276506400049D1FB /* SceneDelegate.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -312,14 +312,6 @@
 				95A25420276509D60049D1FB /* ViewController */,
 			);
 			path = MoviesList;
-			sourceTree = "<group>";
-		};
-		95A2541B276509690049D1FB /* Storyboards */ = {
-			isa = PBXGroup;
-			children = (
-				95A253EF276506420049D1FB /* LaunchScreen.storyboard */,
-			);
-			path = Storyboards;
 			sourceTree = "<group>";
 		};
 		95A25420276509D60049D1FB /* ViewController */ = {
