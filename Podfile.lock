@@ -1,20 +1,24 @@
 PODS:
+  - Kingfisher (7.1.2)
   - netfox (1.19.0)
   - ObjectMapper (4.2.0)
 
 DEPENDENCIES:
+  - Kingfisher
   - netfox
   - ObjectMapper
 
 SPEC REPOS:
   trunk:
+    - Kingfisher
     - netfox
     - ObjectMapper
 
 SPEC CHECKSUMS:
+  Kingfisher: 44ed6a8504763f27bab46163adfac83f5deb240c
   netfox: efeec1d23406df6cd605212f09a40957bb5654eb
   ObjectMapper: 1eb41f610210777375fa806bf161dc39fb832b81
 
-PODFILE CHECKSUM: 8b52badce11626b0b32fc26045f6f5a575e0a2b4
+PODFILE CHECKSUM: cbf5441870f40fe8418091b5110f5dc35a8cca98
 
 COCOAPODS: 1.10.1
