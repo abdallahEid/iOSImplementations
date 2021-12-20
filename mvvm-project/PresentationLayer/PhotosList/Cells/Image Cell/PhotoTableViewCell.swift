@@ -18,7 +18,7 @@ class PhotoTableViewCell: UITableViewCell {
     @IBOutlet weak private var nameLabel: UILabel!
     @IBOutlet weak private var labelContainerView: UIView!
     
-    var model: PhotoTableViewCellModel? {
+    var model: PhotoInformationModel? {
         didSet {
             bindData()
         }
@@ -35,6 +35,10 @@ class PhotoTableViewCell: UITableViewCell {
     private func configureUI() {
         labelContainerView.backgroundColor = UIColor.black.withAlphaComponent(0.5)
         downloadedImageView.contentMode = .scaleToFill
+        
+        nameLabel.textColor = .white
+        descriptionLabel.textColor = .white
+        dateLabel.textColor = .white
     }
     
     private func bindData() {

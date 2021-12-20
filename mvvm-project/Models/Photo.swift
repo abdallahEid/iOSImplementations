@@ -7,12 +7,38 @@
 
 import Foundation
 
-struct Photo {
-    let id: Int
+struct PhotosListResponse: Codable {
+
+    var user: User
+    var createdAt: String
+
+    enum CodingKeys: String, CodingKey {
+        case user
+        case createdAt = "created_at"
+    }
+}
+
+// MARK: - User
+struct User: Codable {
+    let twitterUsername, instagramUsername: String?
+    let username: String
+    let profileImage: ProfileImage
     let name: String
-    let description: String?
-    let created_at: Date
-    let image_url: String
-    let for_sale: Bool
-    let camera: String?
+    var createdAt: String?
+    let forHire: Bool
+
+    enum CodingKeys: String, CodingKey {
+
+        case twitterUsername = "twitter_username"
+        case instagramUsername = "instagram_username"
+        case username
+        case profileImage = "profile_image"
+        case name
+        case forHire = "for_hire"
+    }
+}
+
+// MARK: - ProfileImage
+struct ProfileImage: Codable {
+    let small, large, medium: String
 }

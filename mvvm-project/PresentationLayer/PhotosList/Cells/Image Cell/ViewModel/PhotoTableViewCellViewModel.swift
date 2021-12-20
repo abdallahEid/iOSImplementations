@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct PhotoTableViewCellModel {
+struct PhotoInformationModel {
     let imageUrl: String
     let description: String
     let name: String

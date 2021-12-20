@@ -23,32 +23,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "BBD62807-3C13-4CE6-92D1-771AD51980D8"
+            uuid = "03E22B30-9A20-4A4A-AE77-719735A71808"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "mvvm-project/PresentationLayer/PhotosList/Cells/Image Cell/PhotoTableViewCell.swift"
+            filePath = "mvvm-project/PresentationLayer/PhotosList/PhotosList MVVM/ViewModel /PhotoListViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "23"
-            endingLineNumber = "23"
-            landmarkName = "model"
-            landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "690E7589-6D91-47ED-B596-554205D4EC02"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "mvvm-project/PresentationLayer/PhotosList/PhotosList MVVM/ViewController/PhotoListMVCTableViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "26"
-            endingLineNumber = "26"
-            landmarkName = "configureTableView()"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
+            landmarkName = "fetchPhotos()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

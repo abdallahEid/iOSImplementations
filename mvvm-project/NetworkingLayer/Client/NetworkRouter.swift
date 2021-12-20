@@ -10,7 +10,7 @@ import Foundation
 typealias Parameters = [String:Any]
 typealias HTTPHeaders = [String:String]
 
-class Router {
+class NetworkRouter {
     
     // MARK: - Properties
     private var task: URLSessionTask?
