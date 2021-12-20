@@ -11,11 +11,11 @@
 #include "Pods/Target Support Files/Pods-mvvm-project/Pods-mvvm-project.release (development).xcconfig"
 
 // Server URL
-BASE_URL = https:/$()/qa.themoviedb.org/3/
+BASE_URL = https:/$()/api.unsplash.com/
 
 // Keys
-API_KEY = 34598197fdde2c0e7acc2c41bc1a18ab
+API_KEY = aflCAunziNhP5eWls4IYTmTDUAPYpk8hmYyTGtdv0fk
 
 // App Settings
-APP_NAME = Movies (dev)
-APP_BUNDLE_ID = abdallah.mvvm-project.dev
+APP_NAME = Simple Gallery (dev)
+APP_BUNDLE_ID = abdallah.simple-gallery.dev

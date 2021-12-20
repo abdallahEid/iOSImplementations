@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct PhotoInformationModel {
+struct PhotoInformationModel: Equatable {
     let imageUrl: String
     let description: String
     let name: String
