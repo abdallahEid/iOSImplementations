@@ -9,13 +9,10 @@ target 'mvvm-project' do
   pod 'netfox'
   pod 'ObjectMapper'
   pod 'Kingfisher'
+  pod 'ProgressHUD'
 
   target 'mvvm-projectTests' do
     inherit! :search_paths
-    # Pods for testing
-  end
-
-  target 'mvvm-projectUITests' do
     # Pods for testing
   end
 

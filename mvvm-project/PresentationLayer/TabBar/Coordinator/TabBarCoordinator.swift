@@ -32,8 +32,8 @@ class TabBarCoordinator {
         
     // MARK: - TabBar Models Configuiration
     func configureTabBarModels(){
-        viewControllers.append(photosListMVCViewController)
         viewControllers.append(photosListViewController)
+        viewControllers.append(photosListMVCViewController)
     }
     
 }

@@ -2,23 +2,27 @@ PODS:
   - Kingfisher (7.1.2)
   - netfox (1.19.0)
   - ObjectMapper (4.2.0)
+  - ProgressHUD (13.6)
 
 DEPENDENCIES:
   - Kingfisher
   - netfox
   - ObjectMapper
+  - ProgressHUD
 
 SPEC REPOS:
   trunk:
     - Kingfisher
     - netfox
     - ObjectMapper
+    - ProgressHUD
 
 SPEC CHECKSUMS:
   Kingfisher: 44ed6a8504763f27bab46163adfac83f5deb240c
   netfox: efeec1d23406df6cd605212f09a40957bb5654eb
   ObjectMapper: 1eb41f610210777375fa806bf161dc39fb832b81
+  ProgressHUD: 4bdaa0d2ddf676b23324b199f9facffb5c3a1620
 
-PODFILE CHECKSUM: cbf5441870f40fe8418091b5110f5dc35a8cca98
+PODFILE CHECKSUM: 94ae91d2270ac2683ff29bb0d5d73556df154bc3
 
 COCOAPODS: 1.10.1

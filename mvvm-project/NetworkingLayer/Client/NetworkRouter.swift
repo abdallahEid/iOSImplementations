@@ -57,6 +57,35 @@ class NetworkRouter {
         self.task?.resume()
     }
     
+    func requestAsync(_ route: EndPointType) async throws -> Data{
+        if !Reachability.isConnectedToNetwork {
+            throw NetworkError.noInternet
+        }
+
+        // Request with base url & path
+        var request = URLRequest(url: route.baseUrl.appendingPathComponent(route.path),
+                                 cachePolicy: .reloadIgnoringLocalAndRemoteCacheData,
+                                 timeoutInterval: 10.0)
+        
+        // httpMethod
+        request.httpMethod = route.httpMethod.rawValue
+        
+        // Headers
+        addHeaders(basicHeaders, request: &request)
+        addHeaders(route.headers ?? [:], request: &request)
+        
+        // encoding
+        do {
+            try route.encoder.encode(urlRequest: &request)
+        } catch {
+            throw NetworkError.encodingFailed
+        }
+
+        // Making the request
+        let (data, _) = try await URLSession.shared.data(for: request)
+        return data
+    }
+    
     func cancel() {
         self.task?.cancel()
     }

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import ProgressHUD
 
 class PhotoListViewController: UITableViewController {
 
@@ -45,13 +46,24 @@ class PhotoListViewController: UITableViewController {
 extension PhotoListViewController {
     private func initializeViewModel(){
         observeForDataFetch()
+        ProgressHUD.show()
         viewModel.fetchPhotos()
     }
     
     private func observeForDataFetch(){
-        viewModel.didFetchData = { [weak self] models in
+        viewModel.didFetchDataSuccessfully = { [weak self] models in
             DispatchQueue.main.async {
+                ProgressHUD.dismiss()
                 self?.tableView.reloadData()
+            }
+        }
+        
+        viewModel.didFetchDataFailure = { [weak self] error in
+            DispatchQueue.main.async {
+                ProgressHUD.dismiss()
+                let alert = UIAlertController(title: "Error", message: error.rawValue, preferredStyle: .alert)
+                alert.addAction( UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+                self?.present(alert, animated: true, completion: nil)
             }
         }
     }

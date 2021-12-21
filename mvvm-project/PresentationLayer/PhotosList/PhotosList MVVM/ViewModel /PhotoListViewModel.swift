@@ -14,8 +14,9 @@ class PhotoListViewModel {
     private var currentPage = 0
     private var users = [User]()
     
-    var didFetchData: ( ([PhotoInformationModel]) -> () )?
-    
+    var didFetchDataSuccessfully: ( ([PhotoInformationModel]) -> () )?
+    var didFetchDataFailure: ( (NetworkError) -> () )?
+
     // MARK: - Initialization
     init(listPhotosAPIManager: ListPhotoAPIManagerProtocol) {
         self.listPhotosAPIManager = listPhotosAPIManager
@@ -68,20 +69,33 @@ class PhotoListViewModel {
     // MARK: - Fetch Photos
     func fetchPhotos(){
         currentPage += 1
-        listPhotosAPIManager.getPhotosList(page: currentPage) { [weak self] apiResponses, error in
-            guard let weakSelf = self, let apiResponses = apiResponses else {
-                return
+        
+        Task.init {
+            do {
+                let response = try await  listPhotosAPIManager.getPhotosListAsyncWait(page: currentPage)
+                self.users = response.map( { $0.user } )
+                let models = getPhotosInformationModels()
+                didFetchDataSuccessfully?(models)
+            } catch let e as NetworkError{
+                didFetchDataFailure?(e)
             }
-
-            for apiResponse in apiResponses {
-                var response = apiResponse
-                response.user.createdAt = response.createdAt
-                weakSelf.users.append(response.user)
-            }
-            
-            let models = weakSelf.getPhotosInformationModels()
-            weakSelf.didFetchData?(models)
         }
+        
+        
+//        listPhotosAPIManager.getPhotosList(page: currentPage) { [weak self] apiResponses, error in
+//            guard let weakSelf = self, let apiResponses = apiResponses else {
+//                return
+//            }
+//
+//            for apiResponse in apiResponses {
+//                var response = apiResponse
+//                response.user.createdAt = response.createdAt
+//                weakSelf.users.append(response.user)
+//            }
+//
+//            let models = weakSelf.getPhotosInformationModels()
+//            weakSelf.didFetchData?(models)
+//        }
     }
     
     // MARK: - Internal Helpers

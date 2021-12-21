@@ -9,9 +9,33 @@ import Foundation
 
 protocol ListPhotoAPIManagerProtocol {
     func getPhotosList(page: Int, completion: @escaping ([PhotosListResponse]?, NetworkError?) -> ())
+    func getPhotosListAsyncWait(page: Int) async throws -> [PhotosListResponse]
 }
 
 struct ListPhotoAPIManager: ListPhotoAPIManagerProtocol {
+    func getPhotosListAsyncWait(page: Int) async throws -> [PhotosListResponse] {
+        var endPoint = ListPhotoEndPoint()
+        endPoint.queryParameters = [
+            "page": page
+        ]
+        
+        do {
+            let data = try await NetworkRouter().requestAsync(endPoint)
+            let decodeResult = endPoint.decoder.decode(responseData: data)
+            switch decodeResult {
+            case .success(let apiResponse):
+                guard let response = apiResponse as? [PhotosListResponse] else {
+                    throw NetworkError.unableToDecode
+                }
+                return response
+            case .failure(let _):
+                throw NetworkError.unableToDecode
+            }
+        } catch {
+            throw NetworkError.unableToDecode
+        }
+    }
+    
     func getPhotosList(page: Int, completion: @escaping ([PhotosListResponse]?, NetworkError?) -> ()) {
         
         var endPoint = ListPhotoEndPoint()
@@ -41,6 +65,8 @@ struct ListPhotoAPIManager: ListPhotoAPIManagerProtocol {
                 break
             }
         }
+        
+        
         
     }
 }
